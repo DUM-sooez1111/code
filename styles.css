@@ -605,200 +605,24 @@ a {
   border-color: rgba(57, 33, 36, 0.45);
 }
 
-.farm-sun {
-  position: absolute;
-  width: 112px;
-  aspect-ratio: 1;
-  right: 13%;
-  top: 9%;
-  border-radius: 50%;
-  background: #ffe68a;
-  box-shadow: 0 0 0 18px rgba(255, 230, 138, 0.2);
+.farm-art {
+  margin: 18px -25px 22px;
+  overflow: hidden;
+  background: #efac70;
 }
 
-.farm-cloud {
-  position: absolute;
-  width: 110px;
-  height: 28px;
-  border-radius: 4px;
-  background: #fff6df;
-  box-shadow: 25px -18px 0 #fff6df, 55px 0 0 #fff6df;
-  image-rendering: pixelated;
+.farm-art img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 54%;
+  image-rendering: auto;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
-.cloud-one {
-  left: 11%;
-  top: 14%;
-}
-
-.cloud-two {
-  left: 47%;
-  top: 24%;
-  transform: scale(0.62);
-  opacity: 0.72;
-}
-
-.farm-hill {
-  position: absolute;
-  width: 68%;
-  height: 200px;
-  bottom: 21%;
-  border-radius: 50% 50% 0 0;
-  transform: skewX(-12deg);
-}
-
-.hill-back {
-  right: -8%;
-  background: #709d62;
-}
-
-.hill-front {
-  width: 62%;
-  left: -15%;
-  bottom: 17%;
-  background: #8ebb68;
-}
-
-.barn {
-  position: absolute;
-  z-index: 3;
-  width: 220px;
-  height: 210px;
-  left: 17%;
-  bottom: 9%;
-  filter: drop-shadow(14px 16px 0 rgba(82, 50, 30, 0.16));
-}
-
-.barn-roof {
-  position: absolute;
-  z-index: 2;
-  width: 196px;
-  height: 105px;
-  left: 12px;
-  top: -17px;
-  transform: rotate(45deg);
-  background: #7b3f38;
-  border: 10px solid #56312d;
-  border-radius: 5px;
-}
-
-.barn-body {
-  position: absolute;
-  z-index: 3;
-  width: 220px;
-  height: 145px;
-  left: 0;
-  bottom: 0;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 34px, rgba(95, 46, 41, 0.28) 34px 39px),
-    #c85f51;
-  border: 9px solid #56312d;
-}
-
-.barn-door {
-  position: absolute;
-  z-index: 4;
-  width: 80px;
-  height: 100px;
-  left: 70px;
-  bottom: 0;
-  background:
-    linear-gradient(35deg, transparent 46%, #f1c27c 47% 53%, transparent 54%),
-    linear-gradient(-35deg, transparent 46%, #f1c27c 47% 53%, transparent 54%),
-    #875044;
-  border: 7px solid #f1c27c;
-}
-
-.barn-window {
-  position: absolute;
-  z-index: 4;
-  width: 42px;
-  aspect-ratio: 1;
-  left: 89px;
-  top: 45px;
-  background: #ffe7a1;
-  border: 6px solid #56312d;
-  box-shadow: inset 0 0 0 5px #8ec6c3;
-}
-
-.silo {
-  position: absolute;
-  z-index: 2;
-  width: 88px;
-  height: 205px;
-  left: calc(17% + 230px);
-  bottom: 9%;
-  border: 8px solid #63564c;
-  border-radius: 45px 45px 5px 5px;
-  background: repeating-linear-gradient(#c3c3ad 0 24px, #9e9f8f 24px 29px);
-  box-shadow: 12px 14px 0 rgba(72, 54, 38, 0.13);
-}
-
-.silo i {
-  position: absolute;
-  width: 12px;
-  height: 150px;
-  right: -20px;
-  bottom: -8px;
-  background: #63564c;
-}
-
-.field {
-  position: absolute;
-  z-index: 3;
-  width: 38%;
-  height: 155px;
-  right: 5%;
-  bottom: 2%;
-  transform: skewX(-17deg);
-  display: flex;
-  gap: 12px;
-}
-
-.field i {
-  flex: 1;
-  background:
-    repeating-linear-gradient(0deg, #f3c15b 0 9px, #6f873d 9px 18px);
-  border-left: 7px solid rgba(91, 83, 45, 0.35);
-}
-
-.farm-fence {
-  position: absolute;
-  z-index: 4;
-  width: 42%;
-  height: 8px;
-  right: 3%;
-  bottom: 25%;
-  background: #f4dfb2;
-  box-shadow: 0 34px 0 #f4dfb2;
-}
-
-.farm-fence::before,
-.farm-fence::after {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 78px;
-  top: -17px;
-  background: #f4dfb2;
-}
-
-.farm-fence::before { left: 9%; }
-.farm-fence::after { right: 12%; }
-
-.pixel-chicken {
-  position: absolute;
-  z-index: 5;
-  right: 13%;
-  bottom: 11%;
-  width: 30px;
-  height: 26px;
-  color: #e94f45;
-  background: #fff4dc;
-  border-radius: 50% 50% 40% 40%;
-  font-size: 10px;
-  text-align: right;
-  filter: drop-shadow(5px 6px 0 rgba(57, 42, 25, 0.2));
+.theme-farm:hover .farm-art img {
+  transform: scale(1.025);
 }
 
 footer {
@@ -921,21 +745,9 @@ footer {
     font-size: 105px;
   }
 
-  .barn {
-    left: 7%;
-    transform: scale(0.78);
-    transform-origin: left bottom;
-  }
-
-  .silo {
-    left: 44%;
-    transform: scale(0.78);
-    transform-origin: left bottom;
-  }
-
-  .field {
-    width: 44%;
-    right: -5%;
+  .farm-art {
+    margin-right: -20px;
+    margin-left: -20px;
   }
 
   footer {
