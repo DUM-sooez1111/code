@@ -383,22 +383,42 @@ a {
   font-size: 13px;
 }
 
-.card-copy a {
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.card-copy a,
+.qr-button {
   width: 58px;
   aspect-ratio: 1;
-  flex: 0 0 auto;
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.46);
   border-radius: 50%;
+  color: inherit;
+  background: transparent;
   font: 25px "IBM Plex Mono", monospace;
   transition: 180ms ease;
+  cursor: pointer;
 }
 
-.card-copy a:hover {
+.qr-button {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.card-copy a:hover,
+.qr-button:hover {
   color: var(--ink);
   background: var(--acid);
   border-color: var(--acid);
+}
+
+.card-copy a:hover {
   transform: rotate(45deg);
 }
 
@@ -512,6 +532,12 @@ a {
 }
 
 .theme-tycoon .card-copy a {
+  border-color: rgba(16, 38, 22, 0.5);
+}
+
+.theme-tycoon .qr-button,
+.theme-chess .qr-button,
+.theme-farm .qr-button {
   border-color: rgba(16, 38, 22, 0.5);
 }
 
@@ -670,6 +696,109 @@ a {
   transform: scale(1.035);
 }
 
+.qr-modal {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.qr-modal[hidden] {
+  display: none;
+}
+
+.qr-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(3, 5, 10, 0.84);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.qr-dialog {
+  width: min(440px, 100%);
+  padding: 36px;
+  position: relative;
+  z-index: 1;
+  color: var(--paper);
+  background: #111520;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.55);
+}
+
+.qr-dialog::before {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 5px;
+  left: 0;
+  top: 0;
+  background: var(--acid);
+}
+
+.qr-dialog .eyebrow {
+  margin-bottom: 14px;
+}
+
+.qr-dialog h2 {
+  margin: 0 0 24px;
+  font: 400 clamp(30px, 6vw, 46px)/1.08 "Black Han Sans", sans-serif;
+}
+
+.qr-image-wrap {
+  padding: 18px;
+  background: #fff;
+}
+
+.qr-image-wrap img {
+  width: 100%;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.qr-dialog > p:not(.eyebrow) {
+  margin: 18px 0;
+  color: #a8adba;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.qr-dialog > a {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ink);
+  background: var(--acid);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.qr-dialog > a span {
+  font: 20px "IBM Plex Mono", monospace;
+}
+
+.qr-close {
+  position: absolute;
+  width: 40px;
+  aspect-ratio: 1;
+  right: 18px;
+  top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: var(--paper);
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+body.qr-open {
+  overflow: hidden;
+}
+
 footer {
   min-height: 160px;
   padding: 45px clamp(22px, 5vw, 78px);
@@ -781,6 +910,15 @@ footer {
     line-height: 1.6;
   }
 
+  .card-actions {
+    gap: 7px;
+  }
+
+  .card-copy a,
+  .qr-button {
+    width: 50px;
+  }
+
   .tower {
     width: 72px;
     height: 175px;
@@ -803,6 +941,10 @@ footer {
   footer {
     flex-direction: column;
     text-align: center;
+  }
+
+  .qr-dialog {
+    padding: 30px 24px 24px;
   }
 }
 
