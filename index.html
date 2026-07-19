@@ -87,6 +87,8 @@
           <p><b>08</b>개의 게임 · 설치 없이 바로 플레이</p>
         </div>
 
+        <p class="mobile-tip"><span>TIP</span> ↗로 바로 플레이하거나 QR로 다른 기기에서 열 수 있어요.</p>
+
         <div class="game-grid">
           <article class="game-card featured theme-crown">
             <div class="card-top">
@@ -282,6 +284,22 @@
       <p>MADE WITH CURIOSITY &amp; CODE</p>
       <a href="https://github.com/DUM-sooez1111" target="_blank" rel="noreferrer">© 2026 DUM-SOOEZ1111</a>
     </footer>
+
+    <nav class="mobile-dock" aria-label="모바일 빠른 메뉴">
+      <a href="#top" class="active" data-mobile-nav="home" aria-label="홈으로 이동">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5M5.5 10v10h13V10M9.5 20v-6h5v6" /></svg>
+        <span>홈</span>
+      </a>
+      <a href="#games" data-mobile-nav="games" aria-label="게임 목록으로 이동">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" /><rect x="14" y="4" width="6" height="6" /><rect x="4" y="14" width="6" height="6" /><rect x="14" y="14" width="6" height="6" /></svg>
+        <span>게임</span>
+      </a>
+      <button id="randomGame" type="button" aria-label="무작위 게임 카드로 이동">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3c5 0 5 10 10 10h3M17 4l3 3-3 3M4 17h3c1.7 0 2.8-1.1 3.8-2.6M17 14l3 3-3 3" /></svg>
+        <span>랜덤</span>
+      </button>
+    </nav>
+    <div id="mobileToast" class="mobile-toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
   </body>

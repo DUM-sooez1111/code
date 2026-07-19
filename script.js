@@ -63,3 +63,46 @@ document.addEventListener("keydown", (event) => {
     closeQrModal();
   }
 });
+
+const mobileNavLinks = document.querySelectorAll("[data-mobile-nav]");
+const gamesSection = document.querySelector("#games");
+const randomGameButton = document.querySelector("#randomGame");
+const mobileToast = document.querySelector("#mobileToast");
+let toastTimer;
+let previousRandomIndex = -1;
+
+const updateMobileNav = () => {
+  const gamesAreActive = gamesSection.getBoundingClientRect().top < window.innerHeight * 0.55;
+  mobileNavLinks.forEach((link) => {
+    link.classList.toggle(
+      "active",
+      link.dataset.mobileNav === (gamesAreActive ? "games" : "home"),
+    );
+  });
+};
+
+const showMobileToast = (message) => {
+  mobileToast.textContent = message;
+  mobileToast.classList.add("show");
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(() => mobileToast.classList.remove("show"), 1800);
+};
+
+randomGameButton.addEventListener("click", () => {
+  let index = Math.floor(Math.random() * cards.length);
+  if (cards.length > 1 && index === previousRandomIndex) {
+    index = (index + 1) % cards.length;
+  }
+  previousRandomIndex = index;
+
+  const card = cards[index];
+  const title = card.querySelector("h3").textContent;
+  card.classList.remove("mobile-highlight");
+  card.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.setTimeout(() => card.classList.add("mobile-highlight"), 350);
+  window.setTimeout(() => card.classList.remove("mobile-highlight"), 1300);
+  showMobileToast(`${title} 카드로 이동했어요`);
+});
+
+window.addEventListener("scroll", updateMobileNav, { passive: true });
+updateMobileNav();
