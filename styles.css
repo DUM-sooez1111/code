@@ -730,9 +730,7 @@ a {
   object-position: 50% 50%;
 }
 
-.theme-demon:hover .screenshot-art img,
-.theme-bike:hover .screenshot-art img,
-.theme-racer:hover .screenshot-art img {
+.game-card:hover .screenshot-art img {
   transform: scale(1.035);
 }
 
