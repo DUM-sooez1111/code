@@ -107,6 +107,12 @@ a {
   top: 30%;
   border: 1px solid rgba(200, 255, 40, 0.2);
   border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -146,6 +152,12 @@ a {
   line-height: 1.9;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .primary-button {
   width: 205px;
   padding: 18px 20px;
@@ -166,6 +178,18 @@ a {
 .primary-button:hover {
   transform: translate(-4px, -4px);
   box-shadow: 6px 6px 0 var(--acid);
+}
+
+.guide-button {
+  border: 1px solid rgba(244, 243, 238, 0.5);
+  color: var(--paper);
+  background: rgba(244, 243, 238, 0.04);
+}
+
+.guide-button:hover {
+  border-color: var(--acid);
+  color: var(--acid);
+  box-shadow: 6px 6px 0 var(--purple);
 }
 
 .hero-art {
