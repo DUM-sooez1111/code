@@ -702,6 +702,145 @@ a {
   transform: scale(1.035);
 }
 
+.play-guides {
+  padding-top: 140px;
+}
+
+.guide-heading {
+  max-width: 760px;
+  margin-bottom: 46px;
+}
+
+.guide-heading .eyebrow {
+  margin-bottom: 18px;
+}
+
+.guide-heading h2 {
+  margin: 0 0 16px;
+  font: 400 clamp(38px, 5vw, 70px)/1 "Black Han Sans", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.guide-heading > p:last-child {
+  margin: 0;
+  color: #8f95a2;
+  font-size: 14px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.game-guide {
+  background: #11151e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 180ms ease, background 180ms ease;
+}
+
+.game-guide[open] {
+  background: #161b27;
+  border-color: rgba(200, 255, 40, 0.5);
+}
+
+.game-guide summary {
+  min-height: 82px;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 42px 1fr 36px;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game-guide summary::-webkit-details-marker {
+  display: none;
+}
+
+.guide-number {
+  color: var(--acid);
+  font: 500 11px "IBM Plex Mono", monospace;
+}
+
+.game-guide summary strong {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.guide-toggle {
+  width: 34px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  font: 20px "IBM Plex Mono", monospace;
+  transition: transform 220ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.game-guide[open] .guide-toggle {
+  color: var(--acid);
+  border-color: var(--acid);
+  transform: rotate(45deg);
+}
+
+.guide-content {
+  padding: 0 20px 24px 74px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.guide-content > p:first-child {
+  margin: 20px 0;
+  color: #c4c8d1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.guide-content ol {
+  margin: 0 0 20px;
+  padding-left: 20px;
+  color: #a7acb8;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.control-row {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.control-row kbd {
+  min-width: 42px;
+  padding: 6px 8px;
+  text-align: center;
+  color: var(--acid);
+  background: #090c12;
+  border: 1px solid rgba(200, 255, 40, 0.28);
+  border-radius: 4px;
+  box-shadow: none;
+  font: 500 10px "IBM Plex Mono", monospace;
+}
+
+.control-row span {
+  color: #8f95a2;
+  font-size: 11px;
+}
+
+.guide-note {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  color: #bac0cb;
+  background: rgba(200, 255, 40, 0.07);
+  border-left: 2px solid var(--acid);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
 .qr-modal {
   position: fixed;
   z-index: 100;
@@ -868,6 +1007,10 @@ footer {
   .crown-art .sun {
     width: min(66vw, 400px);
   }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 620px) {
@@ -908,6 +1051,52 @@ footer {
   .games-section {
     padding: 96px 14px 60px;
     scroll-margin-top: 12px;
+  }
+
+  .play-guides {
+    padding-top: 92px;
+  }
+
+  .guide-heading {
+    margin-bottom: 28px;
+  }
+
+  .guide-heading h2 {
+    font-size: 40px;
+  }
+
+  .guide-heading > p:last-child {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .guide-grid {
+    gap: 10px;
+  }
+
+  .game-guide {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .game-guide summary {
+    min-height: 72px;
+    padding: 14px 15px;
+    grid-template-columns: 32px 1fr 34px;
+    gap: 9px;
+    touch-action: manipulation;
+  }
+
+  .game-guide summary strong {
+    font-size: 15px;
+  }
+
+  .guide-content {
+    padding: 0 16px 20px;
+  }
+
+  .guide-content > p:first-child {
+    margin-top: 16px;
   }
 
   .mobile-tip {
