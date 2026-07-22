@@ -706,6 +706,10 @@ a {
   padding-top: 140px;
 }
 
+#guides {
+  scroll-margin-top: 32px;
+}
+
 .guide-heading {
   max-width: 760px;
   margin-bottom: 46px;
