@@ -696,6 +696,11 @@ a {
   background: linear-gradient(145deg, #138dae, #073745);
 }
 
+.theme-spin {
+  --card: #171225;
+  background: linear-gradient(145deg, #2b1548, #090b12);
+}
+
 .screenshot-art {
   margin: 18px -25px 22px;
   overflow: hidden;

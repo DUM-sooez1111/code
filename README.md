@@ -17,5 +17,6 @@ DUM-sooez1111이 만든 브라우저 게임을 한곳에서 볼 수 있는 게�
 - 마왕의 최종 방어선
 - NEON TRAILS
 - IDLE ISLAND PLANNING — 방치형 섬 도시 건설
+- SPIN OUT — 회전 물리 서바이벌
 
 각 게임 카드의 화살표 버튼을 누르면 해당 게임이 새 탭에서 열립니다.
