@@ -405,6 +405,52 @@ a {
   margin: 0 0 9px;
   font: 400 clamp(28px, 3.8vw, 58px)/1 "Black Han Sans", sans-serif;
   letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+.card-copy > div:first-child {
+  min-width: 0;
+}
+
+.game-title,
+.guide-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  min-width: 0;
+}
+
+.game-title {
+  margin-bottom: 9px;
+}
+
+.game-title h3 {
+  margin: 0;
+}
+
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 4px 7px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font: 600 11px/1.25 "Noto Sans KR", sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.platform-note {
+  margin: 0 0 22px;
+  color: #bac0cb;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.platform-note .platform-badge {
+  margin-right: 4px;
 }
 
 .card-copy p {
@@ -1172,12 +1218,19 @@ footer {
   }
 
   .card-copy p {
-    max-width: 250px;
+    max-width: none;
     line-height: 1.6;
+  }
+
+  .card-copy {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
   }
 
   .card-actions {
     gap: 7px;
+    align-self: flex-end;
   }
 
   .card-copy a,
