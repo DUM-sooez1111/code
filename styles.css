@@ -747,6 +747,15 @@ a {
   background: linear-gradient(145deg, #2b1548, #090b12);
 }
 
+.theme-white {
+  --card: #181918;
+  background: linear-gradient(145deg, #31252d, #0a0b0a 68%);
+}
+
+.theme-white .platform-badge {
+  color: #ff62a8;
+}
+
 .screenshot-art {
   margin: 18px -25px 22px;
   overflow: hidden;
