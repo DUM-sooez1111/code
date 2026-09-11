@@ -1,4 +1,15 @@
 const cards = document.querySelectorAll(".game-card");
+const categoryButtons = document.querySelectorAll("[data-category-filter]");
+const visibleGameCount = document.querySelector("#visibleGameCount");
+const categoryStatus = document.querySelector("#categoryStatus");
+
+const categoryNames = {
+  all: "전체",
+  strategy: "전략·경영",
+  puzzle: "퍼즐·보드",
+  action: "액션",
+  driving: "드라이빙",
+};
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -88,14 +99,38 @@ const showMobileToast = (message) => {
   toastTimer = window.setTimeout(() => mobileToast.classList.remove("show"), 1800);
 };
 
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedCategory = button.dataset.categoryFilter;
+    let visibleCount = 0;
+
+    categoryButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+
+    cards.forEach((card) => {
+      const isVisible = selectedCategory === "all" || card.dataset.category === selectedCategory;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    visibleGameCount.textContent = visibleCount;
+    categoryStatus.textContent = `${categoryNames[selectedCategory]} 게임 ${visibleCount}개를 표시합니다.`;
+    previousRandomIndex = -1;
+  });
+});
+
 randomGameButton.addEventListener("click", () => {
-  let index = Math.floor(Math.random() * cards.length);
-  if (cards.length > 1 && index === previousRandomIndex) {
-    index = (index + 1) % cards.length;
+  const visibleCards = [...cards].filter((card) => !card.hidden);
+  let index = Math.floor(Math.random() * visibleCards.length);
+  if (visibleCards.length > 1 && index === previousRandomIndex) {
+    index = (index + 1) % visibleCards.length;
   }
   previousRandomIndex = index;
 
-  const card = cards[index];
+  const card = visibleCards[index];
   const title = card.querySelector("h3").textContent;
   card.classList.remove("mobile-highlight");
   card.scrollIntoView({ behavior: "smooth", block: "center" });

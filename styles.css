@@ -342,6 +342,70 @@ a {
   font: 500 20px "IBM Plex Mono", monospace;
 }
 
+.game-categories {
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.game-categories button {
+  min-height: 44px;
+  padding: 9px 13px 9px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 999px;
+  color: #c8ccd5;
+  background: rgba(255, 255, 255, 0.04);
+  font: 600 14px "Noto Sans KR", sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.game-categories button:hover {
+  border-color: rgba(200, 255, 40, 0.65);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+
+.game-categories button.active {
+  border-color: var(--acid);
+  color: var(--ink);
+  background: var(--acid);
+}
+
+.game-categories b {
+  min-width: 24px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  font: 600 11px "IBM Plex Mono", monospace;
+  text-align: center;
+}
+
+.game-categories button.active b {
+  background: rgba(7, 10, 18, 0.14);
+}
+
+.game-card[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .game-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1203,6 +1267,24 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 11px;
     line-height: 1.5;
+  }
+
+  .game-categories {
+    margin-right: -14px;
+    margin-left: -14px;
+    padding: 0 14px 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  .game-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-categories button {
+    flex: 0 0 auto;
   }
 
   .mobile-tip span {

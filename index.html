@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260829-touch" />
+    <link rel="stylesheet" href="styles.css?v=20260912-categories" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -91,14 +91,23 @@
             <p class="eyebrow"><span></span> SELECT A GAME</p>
             <h2>게임 보관함</h2>
           </div>
-          <p><b>11</b>개의 게임 · 설치 없이 바로 플레이</p>
+          <p><b id="visibleGameCount">11</b>개의 게임 · 설치 없이 바로 플레이</p>
         </div>
 
         <p class="mobile-tip"><span>TIP</span> ↗로 바로 플레이하거나 QR로 다른 기기에서 열 수 있어요.</p>
         <p class="platform-note"><span class="platform-badge">PC 추천</span> 표시가 있는 게임은 큰 화면과 키보드·마우스로 즐기기 좋아요. 모바일 조작법은 아래 가이드에서 확인하세요.</p>
 
+        <div class="game-categories" role="group" aria-label="게임 카테고리 선택">
+          <button class="active" type="button" data-category-filter="all" aria-pressed="true"><span>전체</span><b>11</b></button>
+          <button type="button" data-category-filter="strategy" aria-pressed="false"><span>전략·경영</span><b>5</b></button>
+          <button type="button" data-category-filter="puzzle" aria-pressed="false"><span>퍼즐·보드</span><b>2</b></button>
+          <button type="button" data-category-filter="action" aria-pressed="false"><span>액션</span><b>3</b></button>
+          <button type="button" data-category-filter="driving" aria-pressed="false"><span>드라이빙</span><b>1</b></button>
+        </div>
+        <p id="categoryStatus" class="sr-only" aria-live="polite">전체 게임 11개를 표시합니다.</p>
+
         <div class="game-grid">
-          <article class="game-card featured theme-crown">
+          <article class="game-card featured theme-crown" data-category="strategy">
             <div class="card-top">
               <span class="number">01</span>
               <span class="genre">KINGDOM BUILDER</span>
@@ -118,7 +127,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-fortune">
+          <article class="game-card theme-fortune" data-category="strategy">
             <div class="card-top">
               <span class="number">02</span>
               <span class="genre">TOWER DEFENSE</span>
@@ -138,7 +147,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-tetris">
+          <article class="game-card theme-tetris" data-category="puzzle">
             <div class="card-top">
               <span class="number">03</span>
               <span class="genre">PUZZLE BATTLE</span>
@@ -158,7 +167,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-tycoon">
+          <article class="game-card theme-tycoon" data-category="strategy">
             <div class="card-top">
               <span class="number">04</span>
               <span class="genre">PARK TYCOON</span>
@@ -178,7 +187,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-chess">
+          <article class="game-card theme-chess" data-category="puzzle">
             <div class="card-top">
               <span class="number">05</span>
               <span class="genre">BOARD GAME</span>
@@ -198,7 +207,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-farm farm-wide">
+          <article class="game-card theme-farm farm-wide" data-category="strategy">
             <div class="card-top">
               <span class="number">06</span>
               <span class="genre">COZY FARMING</span>
@@ -218,7 +227,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-demon">
+          <article class="game-card theme-demon" data-category="action">
             <div class="card-top">
               <span class="number">07</span>
               <span class="genre">ACTION DEFENSE</span>
@@ -238,7 +247,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-bike">
+          <article class="game-card theme-bike" data-category="driving">
             <div class="card-top">
               <span class="number">08</span>
               <span class="genre">OPEN WORLD DRIVING</span>
@@ -258,7 +267,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-city">
+          <article class="game-card theme-city" data-category="strategy">
             <div class="card-top">
               <span class="number">09</span>
               <span class="genre">IDLE CITY BUILDER</span>
@@ -278,7 +287,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-spin">
+          <article class="game-card theme-spin" data-category="action">
             <div class="card-top">
               <span class="number">10</span>
               <span class="genre">PHYSICS SURVIVAL</span>
@@ -298,7 +307,7 @@
             </div>
           </article>
 
-          <article class="game-card theme-white">
+          <article class="game-card theme-white" data-category="action">
             <div class="card-top">
               <span class="number">11</span>
               <span class="genre">3D ARENA ACTION</span>
@@ -481,6 +490,6 @@
     </nav>
     <div id="mobileToast" class="mobile-toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260912-categories"></script>
   </body>
 </html>
