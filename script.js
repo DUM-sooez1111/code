@@ -9,6 +9,7 @@ const categoryNames = {
   puzzle: "퍼즐·보드",
   action: "액션",
   driving: "드라이빙",
+  casual: "캐주얼",
 };
 
 const revealObserver = new IntersectionObserver(

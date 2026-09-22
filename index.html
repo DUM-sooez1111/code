@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260912-categories" />
+    <link rel="stylesheet" href="styles.css?v=20260922-c" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -66,7 +66,7 @@
           <div class="pixel-shape shape-three"></div>
           <div class="hero-disc">
             <span>PLAY</span>
-            <strong>11</strong>
+            <strong>12</strong>
             <small>GAMES</small>
           </div>
         </div>
@@ -91,20 +91,21 @@
             <p class="eyebrow"><span></span> SELECT A GAME</p>
             <h2>게임 보관함</h2>
           </div>
-          <p><b id="visibleGameCount">11</b>개의 게임 · 설치 없이 바로 플레이</p>
+          <p><b id="visibleGameCount">12</b>개의 게임 · 설치 없이 바로 플레이</p>
         </div>
 
         <p class="mobile-tip"><span>TIP</span> ↗로 바로 플레이하거나 QR로 다른 기기에서 열 수 있어요.</p>
         <p class="platform-note"><span class="platform-badge">PC 추천</span> 표시가 있는 게임은 큰 화면과 키보드·마우스로 즐기기 좋아요. 모바일 조작법은 아래 가이드에서 확인하세요.</p>
 
         <div class="game-categories" role="group" aria-label="게임 카테고리 선택">
-          <button class="active" type="button" data-category-filter="all" aria-pressed="true"><span>전체</span><b>11</b></button>
+          <button class="active" type="button" data-category-filter="all" aria-pressed="true"><span>전체</span><b>12</b></button>
           <button type="button" data-category-filter="strategy" aria-pressed="false"><span>전략·경영</span><b>5</b></button>
           <button type="button" data-category-filter="puzzle" aria-pressed="false"><span>퍼즐·보드</span><b>2</b></button>
           <button type="button" data-category-filter="action" aria-pressed="false"><span>액션</span><b>3</b></button>
           <button type="button" data-category-filter="driving" aria-pressed="false"><span>드라이빙</span><b>1</b></button>
+          <button type="button" data-category-filter="casual" aria-pressed="false"><span>캐주얼</span><b>1</b></button>
         </div>
-        <p id="categoryStatus" class="sr-only" aria-live="polite">전체 게임 11개를 표시합니다.</p>
+        <p id="categoryStatus" class="sr-only" aria-live="polite">전체 게임 12개를 표시합니다.</p>
 
         <div class="game-grid">
           <article class="game-card featured theme-crown" data-category="strategy">
@@ -321,8 +322,28 @@
                 <p>두 전투 유닛 중 하나를 골라 몰려오는 블록 적을 베어내세요.</p>
               </div>
               <div class="card-actions">
-                <button class="qr-button" type="button" data-qr="assets/qr/white.png" data-title="코어 블레이드" data-url="https://dum-sooez1111.github.io/white/" aria-label="코어 블레이드 QR 코드 보기">QR</button>
-                <a href="https://dum-sooez1111.github.io/white/" target="_blank" rel="noreferrer" aria-label="코어 블레이드 플레이">↗</a>
+                <button class="qr-button" type="button" data-qr="assets/qr/white.png" data-title="코어 블레이드" data-url="https://dum-sooez1111.github.io/white/?v=6ee5ddc" aria-label="코어 블레이드 QR 코드 보기">QR</button>
+                <a href="https://dum-sooez1111.github.io/white/?v=6ee5ddc" target="_blank" rel="noreferrer" aria-label="코어 블레이드 플레이">↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card theme-keycap" data-category="casual">
+            <div class="card-top">
+              <span class="number">12</span>
+              <span class="genre">CASUAL CLICKER</span>
+            </div>
+            <div class="card-art screenshot-art" aria-hidden="true">
+              <img src="assets/thumbnails/keycap-clicker.webp" alt="" />
+            </div>
+            <div class="card-copy">
+              <div>
+                <h3>키캡 클릭커</h3>
+                <p>세라믹 키캡을 눌러 타건감과 소리를 즐기는 작은 클릭 게임.</p>
+              </div>
+              <div class="card-actions">
+                <button class="qr-button" type="button" data-qr="assets/qr/c.png" data-title="키캡 클릭커" data-url="https://dum-sooez1111.github.io/c/" aria-label="키캡 클릭커 QR 코드 보기">QR</button>
+                <a href="https://dum-sooez1111.github.io/c/" target="_blank" rel="noreferrer" aria-label="키캡 클릭커 플레이">↗</a>
               </div>
             </div>
           </article>
@@ -446,6 +467,16 @@
               </div>
             </details>
 
+            <details class="game-guide">
+              <summary><span class="guide-number">12</span><strong>키캡 클릭커</strong><span class="guide-toggle">＋</span></summary>
+              <div class="guide-content">
+                <p>화면 가운데의 세라믹 키캡을 누르면 눌림 애니메이션과 타건음이 나는 가벼운 클릭 게임입니다.</p>
+                <ol><li>화면 가운데 키캡을 누릅니다.</li><li>키캡을 놓고 다시 누르며 반응과 소리를 즐깁니다.</li></ol>
+                <div class="control-row"><kbd>클릭·터치</kbd><span>키캡 누르기</span><kbd>Space / Enter</kbd><span>키캡 누르기</span></div>
+                <p class="guide-note">모바일에서도 키캡을 터치해 플레이할 수 있습니다. 클릭 횟수는 실행 중에만 유지되며 화면에는 표시되지 않습니다.</p>
+              </div>
+            </details>
+
           </div>
         </section>
       </section>
@@ -490,6 +521,6 @@
     </nav>
     <div id="mobileToast" class="mobile-toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=20260912-categories"></script>
+    <script src="script.js?v=20260922-c"></script>
   </body>
 </html>
