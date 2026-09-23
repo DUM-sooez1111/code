@@ -3,6 +3,42 @@ const categoryButtons = document.querySelectorAll("[data-category-filter]");
 const visibleGameCount = document.querySelector("#visibleGameCount");
 const categoryStatus = document.querySelector("#categoryStatus");
 
+const promoAds = [
+  ["crownvale", "CROWNVALE", "KINGDOM BUILDER", "영토를 넓혀 나만의 왕국을 건설하세요.", "https://dum-sooez1111.github.io/kingdom/"],
+  ["fortune-bastion", "포춘 바스티온", "TOWER DEFENSE", "타워를 뽑고 합성해 끝없는 웨이브를 막으세요.", "https://dum-sooez1111.github.io/RNG2/"],
+  ["tetris-battle", "TETRIS BATTLE", "PUZZLE BATTLE", "블록을 쌓고 AI와 네온 퍼즐 대결을 펼치세요.", "https://dum-sooez1111.github.io/tetris-battle/"],
+  ["tycoon-park", "타이쿤 파크", "PARK TYCOON", "시설과 손님을 관리해 최고의 파크를 만드세요.", "https://dum-sooez1111.github.io/Tycoon/"],
+  ["chess-game", "체스 게임", "BOARD GAME", "말을 움직여 AI의 킹을 체크메이트하세요.", "https://dum-sooez1111.github.io/chess/"],
+  ["sunshine-farm", "햇살마을 농장", "COZY FARMING", "작물을 키우며 천천히 쉬어가는 농장 생활.", "https://dum-sooez1111.github.io/5678/"],
+  ["demon-defense", "마왕의 최종 방어선", "ACTION DEFENSE", "마왕을 조작해 몰려오는 용사를 막아내세요.", "https://dum-sooez1111.github.io/ssr/"],
+  ["neon-trails", "NEON TRAILS", "OPEN WORLD DRIVING", "자동차와 바이크로 3D 월드를 질주하세요.", "https://dum-sooez1111.github.io/bike/"],
+  ["idle-island-planning", "IDLE ISLAND PLANNING", "IDLE CITY BUILDER", "산업과 무역망을 세워 작은 섬을 키우세요.", "https://dum-sooez1111.github.io/city/"],
+  ["spin-out", "SPIN OUT", "PHYSICS SURVIVAL", "회전 막대를 피하고 마지막까지 살아남으세요.", "https://dum-sooez1111.github.io/spin/"],
+  ["core-blade", "코어 블레이드", "3D ARENA ACTION", "쌍검을 휘둘러 블록 적의 웨이브를 베어내세요.", "https://dum-sooez1111.github.io/white/?v=6ee5ddc"],
+  ["keycap-clicker", "키캡 클릭커", "CASUAL CLICKER", "세라믹 키캡의 반응과 타건음을 즐겨보세요.", "https://dum-sooez1111.github.io/c/"],
+];
+
+const promoVideo = document.querySelector("#promoVideo");
+const promoLink = document.querySelector("#promoLink");
+const promoCounter = document.querySelector("#promoCounter");
+let currentPromoIndex = -1;
+
+const playNextPromo = () => {
+  const choices = promoAds.map((_, index) => index).filter((index) => index !== currentPromoIndex);
+  currentPromoIndex = choices[Math.floor(Math.random() * choices.length)];
+  const [slug, title, genre, tagline, url] = promoAds[currentPromoIndex];
+  promoLink.href = url;
+  promoLink.setAttribute("aria-label", `${title} 플레이`);
+  promoCounter.textContent = `${currentPromoIndex + 1} / ${promoAds.length}`;
+  promoVideo.src = `assets/promos/${slug}.webm`;
+  promoVideo.load();
+  promoVideo.play().catch(() => {});
+};
+
+promoVideo.addEventListener("ended", playNextPromo);
+promoVideo.addEventListener("error", playNextPromo);
+playNextPromo();
+
 const categoryNames = {
   all: "전체",
   strategy: "전략·경영",

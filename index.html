@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260922-c" />
+    <link rel="stylesheet" href="styles.css?v=20260922-promo" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -36,6 +36,12 @@
 
     <main id="top">
       <section class="hero">
+        <aside class="promo-banner" aria-label="추천 게임">
+          <a id="promoLink" class="promo-player" href="#games" target="_blank" rel="noreferrer" aria-label="추천 게임 플레이">
+            <video id="promoVideo" muted autoplay playsinline preload="auto" aria-hidden="true"></video>
+            <span class="promo-player-status">RANDOM AD <b id="promoCounter">1 / 12</b></span>
+          </a>
+        </aside>
         <div class="hero-copy">
           <p class="eyebrow"><span></span> INDEPENDENT WEB GAMES</p>
           <h1>
@@ -521,6 +527,6 @@
     </nav>
     <div id="mobileToast" class="mobile-toast" role="status" aria-live="polite"></div>
 
-    <script src="script.js?v=20260922-c"></script>
+    <script src="script.js?v=20260923-promo-video"></script>
   </body>
 </html>
