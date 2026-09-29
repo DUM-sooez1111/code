@@ -877,6 +877,11 @@ a {
   background: linear-gradient(145deg, #232323, #050505);
 }
 
+.theme-block-field {
+  --card: #172b2a;
+  background: linear-gradient(145deg, #31594f, #091513 72%);
+}
+
 .screenshot-art {
   margin: 18px -25px 22px;
   overflow: hidden;
